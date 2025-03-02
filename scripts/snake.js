@@ -313,8 +313,8 @@ function init() { //初始化
   foodSpeed32 = defaultSpeed
   totalScore = 0
   snakeScore = 0
-  bound1 = 500
-  bound2 = 1000
+  bound1 = 2000
+  bound2 = 10000
   scoreRefresh(0)
   tail = 0
   speedUp = false
@@ -328,7 +328,7 @@ function init() { //初始化
   settle = false
   settling = false
   snake = [{ x: 6, y: 6, dirX: 0, dirY: 1 }]
-  foodWeight = [5, 3, 1]
+  foodWeight = [6, 2, 1]
   food = []
   movingFood31 = []
   movingFood32 = []
@@ -406,8 +406,8 @@ function whetherEatFood() { //判断是否吃到食物
         eatFoodSound.currentTime = 0
         eatFoodSound.play()
       }
-      animateFun(obj.id * 5)
-      snakeScore += obj.id * 5
+      animateFun(5)
+      snakeScore += 5
       tail += obj.id
       food.splice(idx, 1)
     }
@@ -419,8 +419,8 @@ function whetherEatFood() { //判断是否吃到食物
         eatFoodSound.currentTime = 0
         eatFoodSound.play()
       }
-      animateFun(obj.id * 5)
-      snakeScore += obj.id * 5
+      animateFun(500)
+      snakeScore += 500
       tail += obj.id
       movingFood31.splice(idx, 1)
     }
@@ -432,8 +432,8 @@ function whetherEatFood() { //判断是否吃到食物
         eatFoodSound.currentTime = 0
         eatFoodSound.play()
       }
-      animateFun(obj.id * 5)
-      snakeScore += obj.id * 5
+      animateFun(500)
+      snakeScore += 500
       tail += obj.id
       movingFood32.splice(idx, 1)
     }
@@ -445,8 +445,8 @@ function whetherEatFood() { //判断是否吃到食物
         eatFoodSound.currentTime = 0
         eatFoodSound.play()
       }
-      animateFun(obj.id * 5)
-      snakeScore += obj.id * 5
+      animateFun(50)
+      snakeScore += 50
       tail += obj.id
       movingFood2.splice(idx, 1)
     }
@@ -527,9 +527,12 @@ function scoreRefresh(sc) { //分数更新
 }
 
 function scoreRefreshLoop() { //分数更新循环
+  if (i < 10) i++
+  else i += 5
   scoreRefresh(i)
-  i += 1
-  if (i <= totalScore + snakeScore) setTimeout(scoreRefreshLoop, 25)
+  if (i < totalScore + snakeScore) {
+    setTimeout(scoreRefreshLoop, 25)
+  }
 }
 
 function drawGame() { //打印贴图
@@ -888,9 +891,7 @@ function randomFood() {  //带权重随机生成一个食物id
   })
   let r = myRandom(1, sum)
   for (let i = 0; i < cumuWeights.length; i++) {
-    if (cumuWeights[i] >= r) {
-      return i + 1
-    }
+    if (cumuWeights[i] >= r) return i + 1
   }
 }
 
