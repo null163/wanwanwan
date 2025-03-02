@@ -7,7 +7,7 @@ body {
     position: relative;
     margin: 0;
     overflow: hidden;
-    background-color: #b4ddf7;
+    background-color: #cceafd;
 }
 
 .flipH {
@@ -65,7 +65,7 @@ body {
 .mask {
     position: absolute;
     z-index: 2;
-    background-color: #b4ddf7;
+    background-color: #cceafd;
 }
 
 .pause {
@@ -105,7 +105,7 @@ body {
 .pausePanelContainer {
     position: relative;
     z-index: 5;
-    visibility: hidden;
+    /* visibility: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;

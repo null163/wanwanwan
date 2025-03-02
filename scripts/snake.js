@@ -122,8 +122,8 @@ function resize() {
   tipLeft = (windowWidth + gameWidth) / 2 + 105 / 659 * windowHeight
 
   pausePanelHeight = 150 / 659 * windowHeight
-  pausePanelWidth = 225 / 659 * windowHeight
-  pausePanelTop = 205 / 659 * windowHeight
+  pausePanelWidth = 220 / 659 * windowHeight
+  pausePanelTop = 190 / 659 * windowHeight
   pausePanelLeft = (windowWidth - pausePanelWidth) / 2
 
   musicWidth = 88 / 659 * windowHeight
@@ -138,7 +138,7 @@ function resize() {
 
   goHeight = 200 / 659 * windowHeight
   goWidth = 245 / 659 * windowHeight
-  goTop = 20 / 659 * windowHeight
+  goTop = 18 / 659 * windowHeight
   goLeft = (windowWidth - goWidth) / 2
 
   againWidth = 105 / 659 * windowHeight
@@ -328,7 +328,7 @@ function init() { //初始化
   settle = false
   settling = false
   snake = [{ x: 6, y: 6, dirX: 0, dirY: 1 }]
-  foodWeight = [6, 2, 1]
+  foodWeight = [10, 3, 1]
   food = []
   movingFood31 = []
   movingFood32 = []
