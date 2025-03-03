@@ -105,7 +105,7 @@ body {
 .pausePanelContainer {
     position: relative;
     z-index: 5;
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;

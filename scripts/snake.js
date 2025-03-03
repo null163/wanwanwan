@@ -408,7 +408,7 @@ function whetherEatFood() { //判断是否吃到食物
       }
       animateFun(5)
       snakeScore += 5
-      tail += obj.id
+      tail += 1
       food.splice(idx, 1)
     }
   })
@@ -421,7 +421,7 @@ function whetherEatFood() { //判断是否吃到食物
       }
       animateFun(500)
       snakeScore += 500
-      tail += obj.id
+      tail += 6
       movingFood31.splice(idx, 1)
     }
   })
@@ -434,7 +434,7 @@ function whetherEatFood() { //判断是否吃到食物
       }
       animateFun(500)
       snakeScore += 500
-      tail += obj.id
+      tail += 6
       movingFood32.splice(idx, 1)
     }
   })
@@ -447,7 +447,7 @@ function whetherEatFood() { //判断是否吃到食物
       }
       animateFun(50)
       snakeScore += 50
-      tail += obj.id
+      tail += 3
       movingFood2.splice(idx, 1)
     }
   })
