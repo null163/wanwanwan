@@ -316,6 +316,7 @@ function init() { //初始化
   bound1 = 2000
   bound2 = 10000
   scoreRefresh(0)
+  scoreText.style.color = '#9cd4ff'
   tail = 0
   speedUp = false
   eatFood = false
