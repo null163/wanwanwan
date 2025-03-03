@@ -71,7 +71,7 @@ const settleSound = document.getElementById('settleSound')
 let windowHeight, bodySize, gameWidth, headHeight, headWidth, dirControlWidth
 let keyboardHeight, buttonWidth, buttonTop1, buttonTop2, buttonLeft, i, goTop
 let keyboardTop, keyboardLeft, score1, score2, font, letter, Left, Top, goLeft
-let tipWidth, tipHeight, tipTop, tipLeft, windowWidth, pausePanelHeight
+let tipWidth, tipHeight, tipTop, tipLeft, windowWidth, pausePanelHeight, buttonHeight
 let pausePanelWidth, pausePanelTop, pausePanelLeft, againTop, againLeft
 let musicWidth, musicHeight, musicTop, musicLeft, continueHeight, againWidth
 let continueWidth, continueTop, continueLeft, goHeight, goWidth, scAniWidth
@@ -107,7 +107,8 @@ function resize() {
   font = 17 / 659 * windowHeight
   letter = 1 / 659 * windowHeight
 
-  buttonWidth = 53 / 659 * windowHeight  //圆按钮直径
+  buttonWidth = 53 / 659 * windowHeight  //按钮
+  buttonHeight = 56 / 659 * windowHeight
   buttonTop1 = 25 / 659 * windowHeight
   buttonTop2 = 100 / 659 * windowHeight
   buttonLeft = 32 / 659 * windowHeight
@@ -191,17 +192,17 @@ function resize() {
   keyboard.style.width = gameWidth + 'px'
   keyboard.style.top = gameWidth + Top + 'px'
   keyboard.style.left = Left + 'px'
-  keyboard.style.backgroundSize = gameWidth - 1 / 659 * windowHeight + 'px ' + keyboardHeight + 'px'
+  keyboard.style.backgroundSize = gameWidth + 'px ' + keyboardHeight + 'px'
 
-  pauseButton.style.height = buttonWidth + 'px'
+  pauseButton.style.height = buttonHeight + 'px'
   pauseButton.style.width = buttonWidth + 'px'
-  pauseButton.style.backgroundSize = buttonWidth + 'px ' + buttonWidth + 'px'
+  pauseButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
   pauseButton.style.top = buttonTop1 + 'px'
   pauseButton.style.left = buttonLeft + 'px'
 
-  speedButton.style.height = buttonWidth + 'px'
+  speedButton.style.height = buttonHeight + 'px'
   speedButton.style.width = buttonWidth + 'px'
-  speedButton.style.backgroundSize = buttonWidth + 'px ' + buttonWidth + 'px'
+  speedButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
   speedButton.style.top = buttonTop2 + 'px'
   speedButton.style.left = buttonLeft + 'px'
 
@@ -313,8 +314,8 @@ function init() { //初始化
   foodSpeed32 = defaultSpeed
   totalScore = 0
   snakeScore = 0
-  bound1 = 2000
-  bound2 = 10000
+  bound1 = 800
+  bound2 = 1600
   scoreRefresh(0)
   scoreText.style.color = '#9cd4ff'
   tail = 0
@@ -1186,7 +1187,7 @@ pauseButton.addEventListener('touchstart', function (e) {  //暂停键
 function speedStart() {  //加速开始
   if (!speedUp) {
     speedUp = true
-    speedButton.style.backgroundImage = 'url(./assets/speed_hold.png)'
+    speedButton.style.backgroundImage = 'url(./assets/pause_hold.png)'
     moveSpeed = rushSpeed
     foodSpeed32 = rushSpeed
   }
