@@ -7,7 +7,7 @@ let tailSpeed                  //尾巴变短速度
 let foodSpeed2                 //食物移动速度(随机路线)
 let foodSpeed31                //食物移动速度(固定路线，速度不变)
 let foodSpeed32                //食物移动速度(固定路线，速度变化)
-let maxScore = Number(localStorage.getItem('maxScore_mgf'))
+let maxScore = Number(localStorage.getItem('maxScore_yw'))
 let totalScore                 //总分数
 let snakeScore                 //储存分数
 let bound1                     //第一阶段分数
@@ -1014,7 +1014,7 @@ function GameOver() { //游戏结束
   drawGame()
   if (totalScore > maxScore) {
     maxScore = totalScore
-    localStorage.setItem('maxScore_mgf', maxScore)
+    localStorage.setItem('maxScore_yw', maxScore)
   }
   if (maxScore > 99999) {
     maxScoreText.innerHTML = Math.floor(maxScore / 100) / 100 + '万'
