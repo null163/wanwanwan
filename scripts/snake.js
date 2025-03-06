@@ -92,15 +92,15 @@ function resize() {
   Top = headHeight - 5 / 659 * windowHeight
   Left = (headWidth - gameWidth) / 2
 
-  maskLeft.style.width = 15 / 659 * windowHeight + 'px'
-  maskLeft.style.height = gameWidth + 'px'
-  maskLeft.style.top = Top + 'px'
-  maskLeft.style.left = -3 / 659 * windowHeight + 'px'
+  maskLeft.style.width = (15 / 659 * windowHeight).toFixed(2) + 'px'
+  maskLeft.style.height = gameWidth.toFixed(2) + 'px'
+  maskLeft.style.top = Top.toFixed(2) + 'px'
+  maskLeft.style.left = (-3 / 659 * windowHeight).toFixed(2) + 'px'
 
-  maskRight.style.width = 15 / 659 * windowHeight + 'px'
-  maskRight.style.height = gameWidth + 'px'
-  maskRight.style.top = Top + 'px'
-  maskRight.style.left = gameWidth + 12 / 659 * windowHeight + 'px'
+  maskRight.style.width = (15 / 659 * windowHeight).toFixed(2) + 'px'
+  maskRight.style.height = gameWidth.toFixed(2) + 'px'
+  maskRight.style.top = Top.toFixed(2) + 'px'
+  maskRight.style.left = (gameWidth + 12 / 659 * windowHeight).toFixed(2) + 'px'
 
   score1 = 117 / 659 * windowHeight  //top
   score2 = 99 / 659 * windowHeight  //left
@@ -157,18 +157,18 @@ function resize() {
   scAniFont1 = 14 / 659 * windowHeight
   scAniOutline = 1.2 / 659 * windowHeight
 
-  body.style.backgroundSize = bodySize + 'px'
+  body.style.backgroundSize = bodySize.toFixed(2) + 'px'
 
-  whole.style.width = headWidth + 'px'
+  whole.style.width = headWidth.toFixed(2) + 'px'
 
-  scoreAnimate.style.width = headWidth + 'px'
-  scoreAnimate.style.height = headHeight + gameWidth + 'px'
-  scoreAnimate.style.left = (windowWidth - headWidth) / 2 + 'px'
+  scoreAnimate.style.width = headWidth.toFixed(2) + 'px'
+  scoreAnimate.style.height = (headHeight + gameWidth).toFixed(2) + 'px'
+  scoreAnimate.style.left = ((windowWidth - headWidth) / 2).toFixed(2) + 'px'
 
   keyFrames = [
     { fontSize: 0 + 'px' },
-    { fontSize: scAniFont1 + 'px', offset: 0.15 },
-    { fontSize: scAniFont1 + 'px', offset: 0.85 },
+    { fontSize: scAniFont1.toFixed(2) + 'px', offset: 0.15 },
+    { fontSize: scAniFont1.toFixed(2) + 'px', offset: 0.85 },
     { fontSize: 0 + 'px' }
   ]
   timing = {
@@ -177,67 +177,67 @@ function resize() {
     easing: 'ease-in-out'
   }
 
-  head.style.height = headHeight + 'px'
-  head.style.width = headWidth + 'px'
-  head.style.left = Left - 11 / 659 * windowHeight + 'px'
-  head.style.backgroundSize = headWidth + 'px ' + headHeight + 'px'
+  head.style.height = headHeight.toFixed(2) + 'px'
+  head.style.width = headWidth.toFixed(2) + 'px'
+  head.style.left = (Left - 11 / 659 * windowHeight).toFixed(2) + 'px'
+  head.style.backgroundSize = headWidth.toFixed(2) + 'px ' + headHeight.toFixed(2) + 'px'
 
-  game.style.height = gameWidth + 'px'
-  game.style.width = gameWidth + 'px'
-  game.style.top = Top + 'px'
-  game.style.left = Left + 'px'
-  game.style.backgroundSize = gameWidth + 'px ' + gameWidth + 'px'
+  game.style.height = gameWidth.toFixed(2) + 'px'
+  game.style.width = gameWidth.toFixed(2) + 'px'
+  game.style.top = Top.toFixed(2) + 'px'
+  game.style.left = Left.toFixed(2) + 'px'
+  game.style.backgroundSize = gameWidth.toFixed(2) + 'px ' + gameWidth.toFixed(2) + 'px'
 
-  keyboard.style.height = keyboardHeight + 'px'
-  keyboard.style.width = gameWidth + 'px'
-  keyboard.style.top = gameWidth + Top + 'px'
-  keyboard.style.left = Left + 'px'
-  keyboard.style.backgroundSize = gameWidth + 'px ' + keyboardHeight + 'px'
+  keyboard.style.height = keyboardHeight.toFixed(2) + 'px'
+  keyboard.style.width = gameWidth.toFixed(2) + 'px'
+  keyboard.style.top = (gameWidth + Top).toFixed(2) + 'px'
+  keyboard.style.left = Left.toFixed(2) + 'px'
+  keyboard.style.backgroundSize = gameWidth.toFixed(2) + 'px ' + keyboardHeight.toFixed(2) + 'px'
 
-  pauseButton.style.height = buttonHeight + 'px'
-  pauseButton.style.width = buttonWidth + 'px'
-  pauseButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
-  pauseButton.style.top = buttonTop1 + 'px'
-  pauseButton.style.left = buttonLeft + 'px'
+  pauseButton.style.height = buttonHeight.toFixed(2) + 'px'
+  pauseButton.style.width = buttonWidth.toFixed(2) + 'px'
+  pauseButton.style.backgroundSize = buttonWidth.toFixed(2) + 'px ' + buttonHeight.toFixed(2) + 'px'
+  pauseButton.style.top = buttonTop1.toFixed(2) + 'px'
+  pauseButton.style.left = buttonLeft.toFixed(2) + 'px'
 
-  speedButton.style.height = buttonHeight + 'px'
-  speedButton.style.width = buttonWidth + 'px'
-  speedButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
-  speedButton.style.top = buttonTop2 + 'px'
-  speedButton.style.left = buttonLeft + 'px'
+  speedButton.style.height = buttonHeight.toFixed(2) + 'px'
+  speedButton.style.width = buttonWidth.toFixed(2) + 'px'
+  speedButton.style.backgroundSize = buttonWidth.toFixed(2) + 'px ' + buttonHeight.toFixed(2) + 'px'
+  speedButton.style.top = buttonTop2.toFixed(2) + 'px'
+  speedButton.style.left = buttonLeft.toFixed(2) + 'px'
 
-  dirControlButton.style.height = dirControlWidth + 'px'
-  dirControlButton.style.width = dirControlWidth + 'px'
-  dirControlButton.style.backgroundSize = dirControlWidth + 'px ' + dirControlWidth + 'px'
-  dirControlButton.style.top = keyboardTop + 'px'
-  dirControlButton.style.left = keyboardLeft + 'px'
+  dirControlButton.style.height = dirControlWidth.toFixed(2) + 'px'
+  dirControlButton.style.width = dirControlWidth.toFixed(2) + 'px'
+  dirControlButton.style.backgroundSize = dirControlWidth.toFixed(2) + 'px ' + dirControlWidth.toFixed(2) + 'px'
+  dirControlButton.style.top = keyboardTop.toFixed(2) + 'px'
+  dirControlButton.style.left = keyboardLeft.toFixed(2) + 'px'
 
-  scoreContainer.style.top = score1 + 'px'
-  scoreContainer.style.left = score2 + 'px'
-  scoreText.style.fontSize = font + 'px'
-  scoreText.style.letterSpacing = letter + 'px'
-  zeroText.style.fontSize = font + 'px'
-  zeroText.style.letterSpacing = letter + 'px'
+  scoreContainer.style.top = score1.toFixed(2) + 'px'
+  scoreContainer.style.left = score2.toFixed(2) + 'px'
+  scoreText.style.fontSize = font.toFixed(2) + 'px'
+  scoreText.style.letterSpacing = letter.toFixed(2) + 'px'
+  zeroText.style.fontSize = font.toFixed(2) + 'px'
+  zeroText.style.letterSpacing = letter.toFixed(2) + 'px'
 
-  tip.style.height = tipHeight + 'px'
-  tip.style.width = tipWidth + 'px'
-  tip.style.backgroundSize = tipWidth + 'px ' + tipHeight + 'px'
-  tip.style.top = tipTop + 'px'
-  tip.style.left = tipLeft + 'px'
+  tip.style.height = tipHeight.toFixed(2) + 'px'
+  tip.style.width = tipWidth.toFixed(2) + 'px'
+  tip.style.backgroundSize = tipWidth.toFixed(2) + 'px ' + tipHeight.toFixed(2) + 'px'
+  tip.style.top = tipTop.toFixed(2) + 'px'
+  tip.style.left = tipLeft.toFixed(2) + 'px'
 
-  pausePanelContainer.style.height = pausePanelHeight + 'px'
-  pausePanelContainer.style.width = pausePanelWidth + 'px'
-  pausePanelContainer.style.backgroundSize = pausePanelWidth + 'px ' + pausePanelHeight + 'px'
-  pausePanelContainer.style.top = pausePanelTop + 'px'
-  pausePanelContainer.style.left = pausePanelLeft + 'px'
+  pausePanelContainer.style.height = pausePanelHeight.toFixed(2) + 'px'
+  pausePanelContainer.style.width = pausePanelWidth.toFixed(2) + 'px'
+  pausePanelContainer.style.backgroundSize = pausePanelWidth.toFixed(2) + 'px ' + pausePanelHeight.toFixed(2) + 'px'
+  pausePanelContainer.style.top = pausePanelTop.toFixed(2) + 'px'
+  pausePanelContainer.style.left = pausePanelLeft.toFixed(2) + 'px'
 
-  pausePanel.style.height = pausePanelHeight + 'px'
-  pausePanel.style.width = pausePanelWidth + 'px'
-  pausePanel.style.backgroundSize = pausePanelWidth + 'px ' + pausePanelHeight + 'px'
+  pausePanel.style.height = pausePanelHeight.toFixed(2) + 'px'
+  pausePanel.style.width = pausePanelWidth.toFixed(2) + 'px'
+  pausePanel.style.backgroundSize = pausePanelWidth.toFixed(2) + 'px ' + pausePanelHeight.toFixed(2) + 'px'
 
   keyFrames2 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
-    { height: pausePanelHeight + 'px', width: pausePanelWidth + 'px', backgroundSize: `${pausePanelWidth}px ${pausePanelHeight}px` }
+    { height: pausePanelHeight.toFixed(2) + 'px', width: pausePanelWidth.toFixed(2) + 'px', backgroundSize: `${pausePanelWidth.toFixed(2)}px ${pausePanelHeight.toFixed(2)}px` }
   ]
 
   timing2 = {
@@ -246,53 +246,53 @@ function resize() {
     easing: 'ease-in-out'
   }
 
-  musicON.style.height = musicHeight + 'px'
-  musicON.style.width = musicWidth + 'px'
-  musicON.style.backgroundSize = musicWidth + 'px ' + musicHeight + 'px'
-  musicON.style.top = musicTop + 'px'
-  musicON.style.left = musicLeft + 'px'
+  musicON.style.height = musicHeight.toFixed(2) + 'px'
+  musicON.style.width = musicWidth.toFixed(2) + 'px'
+  musicON.style.backgroundSize = musicWidth.toFixed(2) + 'px ' + musicHeight.toFixed(2) + 'px'
+  musicON.style.top = musicTop.toFixed(2) + 'px'
+  musicON.style.left = musicLeft.toFixed(2) + 'px'
 
-  continueButton.style.height = continueHeight + 'px'
-  continueButton.style.width = continueWidth + 'px'
-  continueButton.style.backgroundSize = continueWidth + 'px ' + continueHeight + 'px'
-  continueButton.style.top = continueTop + 'px'
-  continueButton.style.left = continueLeft + 'px'
+  continueButton.style.height = continueHeight.toFixed(2) + 'px'
+  continueButton.style.width = continueWidth.toFixed(2) + 'px'
+  continueButton.style.backgroundSize = continueWidth.toFixed(2) + 'px ' + continueHeight.toFixed(2) + 'px'
+  continueButton.style.top = continueTop.toFixed(2) + 'px'
+  continueButton.style.left = continueLeft.toFixed(2) + 'px'
 
-  gameOverPanelContainer.style.height = goHeight + 'px'
-  gameOverPanelContainer.style.width = goWidth + 'px'
-  gameOverPanelContainer.style.top = goTop + 'px'
-  gameOverPanelContainer.style.left = goLeft + 'px'
+  gameOverPanelContainer.style.height = goHeight.toFixed(2) + 'px'
+  gameOverPanelContainer.style.width = goWidth.toFixed(2) + 'px'
+  gameOverPanelContainer.style.top = goTop.toFixed(2) + 'px'
+  gameOverPanelContainer.style.left = goLeft.toFixed(2) + 'px'
 
-  gameOverPanel.style.height = goHeight + 'px'
-  gameOverPanel.style.width = goWidth + 'px'
-  gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
+  gameOverPanel.style.height = goHeight.toFixed(2) + 'px'
+  gameOverPanel.style.width = goWidth.toFixed(2) + 'px'
+  gameOverPanel.style.backgroundSize = goWidth.toFixed(2) + 'px ' + goHeight.toFixed(2) + 'px'
 
   keyFrames3 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
-    { height: goHeight + 'px', width: goWidth + 'px', backgroundSize: `${goWidth}px ${goHeight}px` }
+    { height: goHeight.toFixed(2) + 'px', width: goWidth.toFixed(2) + 'px', backgroundSize: `${goWidth.toFixed(2)}px ${goHeight.toFixed(2)}px` }
   ]
 
-  again.style.height = continueHeight + 'px'
-  again.style.width = againWidth + 'px'
-  again.style.top = againTop + 'px'
-  again.style.left = againLeft + 'px'
-  again.style.backgroundSize = againWidth + 'px ' + continueHeight + 'px'
+  again.style.height = continueHeight.toFixed(2) + 'px'
+  again.style.width = againWidth.toFixed(2) + 'px'
+  again.style.top = againTop.toFixed(2) + 'px'
+  again.style.left = againLeft.toFixed(2) + 'px'
+  again.style.backgroundSize = againWidth.toFixed(2) + 'px ' + continueHeight.toFixed(2) + 'px'
 
-  maxScoreText.style.top = maxScore1 + 'px'
-  maxScoreText.style.left = maxScore2 + 'px'
-  maxScoreText.style.fontSize = font + 'px'
-  maxScoreText.style.letterSpacing = letter + 'px'
+  maxScoreText.style.top = maxScore1.toFixed(2) + 'px'
+  maxScoreText.style.left = maxScore2.toFixed(2) + 'px'
+  maxScoreText.style.fontSize = font.toFixed(2) + 'px'
+  maxScoreText.style.letterSpacing = letter.toFixed(2) + 'px'
 
-  currentScoreText.style.top = currentScore1 + 'px'
-  currentScoreText.style.left = currentScore2 + 'px'
-  currentScoreText.style.fontSize = font + 'px'
-  currentScoreText.style.letterSpacing = letter + 'px'
+  currentScoreText.style.top = currentScore1.toFixed(2) + 'px'
+  currentScoreText.style.left = currentScore2.toFixed(2) + 'px'
+  currentScoreText.style.fontSize = font.toFixed(2) + 'px'
+  currentScoreText.style.letterSpacing = letter.toFixed(2) + 'px'
 
-  key.style.height = dirControlWidth + 'px'
-  key.style.width = dirControlWidth + 'px'
-  key.style.backgroundSize = dirControlWidth + 'px ' + dirControlWidth + 'px'
-  key.style.top = keyboardTop + 'px'
-  key.style.left = keyboardLeft + 'px'
+  key.style.height = dirControlWidth.toFixed(2) + 'px'
+  key.style.width = dirControlWidth.toFixed(2) + 'px'
+  key.style.backgroundSize = dirControlWidth.toFixed(2) + 'px ' + dirControlWidth.toFixed(2) + 'px'
+  key.style.top = keyboardTop.toFixed(2) + 'px'
+  key.style.left = keyboardLeft.toFixed(2) + 'px'
 
 }
 
