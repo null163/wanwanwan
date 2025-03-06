@@ -64,9 +64,7 @@ const maxScoreText = document.querySelector('.maxScore')
 const currentScoreText = document.querySelector('.currentScore')
 const key = document.querySelector('.key')
 
-const buttonSound = document.getElementById('buttonSound')
-const eatFoodSound = document.getElementById('eatFoodSound')
-const settleSound = document.getElementById('settleSound')
+const BGM = document.getElementById('bgm')
 
 let windowHeight, bodySize, gameWidth, headHeight, headWidth, dirControlWidth
 let keyboardHeight, buttonWidth, buttonTop1, buttonTop2, buttonLeft, i, goTop
@@ -92,15 +90,15 @@ function resize() {
   Top = headHeight - 5 / 659 * windowHeight
   Left = (headWidth - gameWidth) / 2
 
-  maskLeft.style.width = (15 / 659 * windowHeight).toFixed(2) + 'px'
-  maskLeft.style.height = gameWidth.toFixed(2) + 'px'
-  maskLeft.style.top = Top.toFixed(2) + 'px'
-  maskLeft.style.left = (-3 / 659 * windowHeight).toFixed(2) + 'px'
+  maskLeft.style.width = (15 / 659 * windowHeight) + 'px'
+  maskLeft.style.height = gameWidth + 'px'
+  maskLeft.style.top = Top + 'px'
+  maskLeft.style.left = (-3 / 659 * windowHeight) + 'px'
 
-  maskRight.style.width = (15 / 659 * windowHeight).toFixed(2) + 'px'
-  maskRight.style.height = gameWidth.toFixed(2) + 'px'
-  maskRight.style.top = Top.toFixed(2) + 'px'
-  maskRight.style.left = (gameWidth + 12 / 659 * windowHeight).toFixed(2) + 'px'
+  maskRight.style.width = (15 / 659 * windowHeight) + 'px'
+  maskRight.style.height = gameWidth + 'px'
+  maskRight.style.top = Top + 'px'
+  maskRight.style.left = (gameWidth + 12 / 659 * windowHeight) + 'px'
 
   score1 = 117 / 659 * windowHeight  //top
   score2 = 99 / 659 * windowHeight  //left
@@ -157,18 +155,18 @@ function resize() {
   scAniFont1 = 14 / 659 * windowHeight
   scAniOutline = 1.2 / 659 * windowHeight
 
-  body.style.backgroundSize = bodySize.toFixed(2) + 'px'
+  body.style.backgroundSize = bodySize + 'px'
 
-  whole.style.width = headWidth.toFixed(2) + 'px'
+  whole.style.width = headWidth + 'px'
 
-  scoreAnimate.style.width = headWidth.toFixed(2) + 'px'
-  scoreAnimate.style.height = (headHeight + gameWidth).toFixed(2) + 'px'
-  scoreAnimate.style.left = ((windowWidth - headWidth) / 2).toFixed(2) + 'px'
+  scoreAnimate.style.width = headWidth + 'px'
+  scoreAnimate.style.height = (headHeight + gameWidth) + 'px'
+  scoreAnimate.style.left = ((windowWidth - headWidth) / 2) + 'px'
 
   keyFrames = [
     { fontSize: 0 + 'px' },
-    { fontSize: scAniFont1.toFixed(2) + 'px', offset: 0.15 },
-    { fontSize: scAniFont1.toFixed(2) + 'px', offset: 0.85 },
+    { fontSize: scAniFont1 + 'px', offset: 0.15 },
+    { fontSize: scAniFont1 + 'px', offset: 0.85 },
     { fontSize: 0 + 'px' }
   ]
   timing = {
@@ -177,67 +175,67 @@ function resize() {
     easing: 'ease-in-out'
   }
 
-  head.style.height = headHeight.toFixed(2) + 'px'
-  head.style.width = headWidth.toFixed(2) + 'px'
-  head.style.left = (Left - 11 / 659 * windowHeight).toFixed(2) + 'px'
-  head.style.backgroundSize = headWidth.toFixed(2) + 'px ' + headHeight.toFixed(2) + 'px'
+  head.style.height = headHeight + 'px'
+  head.style.width = headWidth + 'px'
+  head.style.left = (Left - 11 / 659 * windowHeight) + 'px'
+  head.style.backgroundSize = headWidth + 'px ' + headHeight + 'px'
 
-  game.style.height = gameWidth.toFixed(2) + 'px'
-  game.style.width = gameWidth.toFixed(2) + 'px'
-  game.style.top = Top.toFixed(2) + 'px'
-  game.style.left = Left.toFixed(2) + 'px'
-  game.style.backgroundSize = gameWidth.toFixed(2) + 'px ' + gameWidth.toFixed(2) + 'px'
+  game.style.height = gameWidth + 'px'
+  game.style.width = gameWidth + 'px'
+  game.style.top = Top + 'px'
+  game.style.left = Left + 'px'
+  game.style.backgroundSize = gameWidth + 'px ' + gameWidth + 'px'
 
-  keyboard.style.height = keyboardHeight.toFixed(2) + 'px'
-  keyboard.style.width = gameWidth.toFixed(2) + 'px'
-  keyboard.style.top = (gameWidth + Top).toFixed(2) + 'px'
-  keyboard.style.left = Left.toFixed(2) + 'px'
-  keyboard.style.backgroundSize = gameWidth.toFixed(2) + 'px ' + keyboardHeight.toFixed(2) + 'px'
+  keyboard.style.height = keyboardHeight + 'px'
+  keyboard.style.width = gameWidth + 'px'
+  keyboard.style.top = (gameWidth + Top) + 'px'
+  keyboard.style.left = Left + 'px'
+  keyboard.style.backgroundSize = gameWidth + 'px ' + keyboardHeight + 'px'
 
-  pauseButton.style.height = buttonHeight.toFixed(2) + 'px'
-  pauseButton.style.width = buttonWidth.toFixed(2) + 'px'
-  pauseButton.style.backgroundSize = buttonWidth.toFixed(2) + 'px ' + buttonHeight.toFixed(2) + 'px'
-  pauseButton.style.top = buttonTop1.toFixed(2) + 'px'
-  pauseButton.style.left = buttonLeft.toFixed(2) + 'px'
+  pauseButton.style.height = buttonHeight + 'px'
+  pauseButton.style.width = buttonWidth + 'px'
+  pauseButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
+  pauseButton.style.top = buttonTop1 + 'px'
+  pauseButton.style.left = buttonLeft + 'px'
 
-  speedButton.style.height = buttonHeight.toFixed(2) + 'px'
-  speedButton.style.width = buttonWidth.toFixed(2) + 'px'
-  speedButton.style.backgroundSize = buttonWidth.toFixed(2) + 'px ' + buttonHeight.toFixed(2) + 'px'
-  speedButton.style.top = buttonTop2.toFixed(2) + 'px'
-  speedButton.style.left = buttonLeft.toFixed(2) + 'px'
+  speedButton.style.height = buttonHeight + 'px'
+  speedButton.style.width = buttonWidth + 'px'
+  speedButton.style.backgroundSize = buttonWidth + 'px ' + buttonHeight + 'px'
+  speedButton.style.top = buttonTop2 + 'px'
+  speedButton.style.left = buttonLeft + 'px'
 
-  dirControlButton.style.height = dirControlWidth.toFixed(2) + 'px'
-  dirControlButton.style.width = dirControlWidth.toFixed(2) + 'px'
-  dirControlButton.style.backgroundSize = dirControlWidth.toFixed(2) + 'px ' + dirControlWidth.toFixed(2) + 'px'
-  dirControlButton.style.top = keyboardTop.toFixed(2) + 'px'
-  dirControlButton.style.left = keyboardLeft.toFixed(2) + 'px'
+  dirControlButton.style.height = dirControlWidth + 'px'
+  dirControlButton.style.width = dirControlWidth + 'px'
+  dirControlButton.style.backgroundSize = dirControlWidth + 'px ' + dirControlWidth + 'px'
+  dirControlButton.style.top = keyboardTop + 'px'
+  dirControlButton.style.left = keyboardLeft + 'px'
 
-  scoreContainer.style.top = score1.toFixed(2) + 'px'
-  scoreContainer.style.left = score2.toFixed(2) + 'px'
-  scoreText.style.fontSize = font.toFixed(2) + 'px'
-  scoreText.style.letterSpacing = letter.toFixed(2) + 'px'
-  zeroText.style.fontSize = font.toFixed(2) + 'px'
-  zeroText.style.letterSpacing = letter.toFixed(2) + 'px'
+  scoreContainer.style.top = score1 + 'px'
+  scoreContainer.style.left = score2 + 'px'
+  scoreText.style.fontSize = font + 'px'
+  scoreText.style.letterSpacing = letter + 'px'
+  zeroText.style.fontSize = font + 'px'
+  zeroText.style.letterSpacing = letter + 'px'
 
-  tip.style.height = tipHeight.toFixed(2) + 'px'
-  tip.style.width = tipWidth.toFixed(2) + 'px'
-  tip.style.backgroundSize = tipWidth.toFixed(2) + 'px ' + tipHeight.toFixed(2) + 'px'
-  tip.style.top = tipTop.toFixed(2) + 'px'
-  tip.style.left = tipLeft.toFixed(2) + 'px'
+  tip.style.height = tipHeight + 'px'
+  tip.style.width = tipWidth + 'px'
+  tip.style.backgroundSize = tipWidth + 'px ' + tipHeight + 'px'
+  tip.style.top = tipTop + 'px'
+  tip.style.left = tipLeft + 'px'
 
-  pausePanelContainer.style.height = pausePanelHeight.toFixed(2) + 'px'
-  pausePanelContainer.style.width = pausePanelWidth.toFixed(2) + 'px'
-  pausePanelContainer.style.backgroundSize = pausePanelWidth.toFixed(2) + 'px ' + pausePanelHeight.toFixed(2) + 'px'
-  pausePanelContainer.style.top = pausePanelTop.toFixed(2) + 'px'
-  pausePanelContainer.style.left = pausePanelLeft.toFixed(2) + 'px'
+  pausePanelContainer.style.height = pausePanelHeight + 'px'
+  pausePanelContainer.style.width = pausePanelWidth + 'px'
+  pausePanelContainer.style.backgroundSize = pausePanelWidth + 'px ' + pausePanelHeight + 'px'
+  pausePanelContainer.style.top = pausePanelTop + 'px'
+  pausePanelContainer.style.left = pausePanelLeft + 'px'
 
-  pausePanel.style.height = pausePanelHeight.toFixed(2) + 'px'
-  pausePanel.style.width = pausePanelWidth.toFixed(2) + 'px'
-  pausePanel.style.backgroundSize = pausePanelWidth.toFixed(2) + 'px ' + pausePanelHeight.toFixed(2) + 'px'
+  pausePanel.style.height = pausePanelHeight + 'px'
+  pausePanel.style.width = pausePanelWidth + 'px'
+  pausePanel.style.backgroundSize = pausePanelWidth + 'px ' + pausePanelHeight + 'px'
 
   keyFrames2 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
-    { height: pausePanelHeight.toFixed(2) + 'px', width: pausePanelWidth.toFixed(2) + 'px', backgroundSize: `${pausePanelWidth.toFixed(2)}px ${pausePanelHeight.toFixed(2)}px` }
+    { height: pausePanelHeight + 'px', width: pausePanelWidth + 'px', backgroundSize: `${pausePanelWidth}px ${pausePanelHeight}px` }
   ]
 
   timing2 = {
@@ -246,53 +244,53 @@ function resize() {
     easing: 'ease-in-out'
   }
 
-  musicON.style.height = musicHeight.toFixed(2) + 'px'
-  musicON.style.width = musicWidth.toFixed(2) + 'px'
-  musicON.style.backgroundSize = musicWidth.toFixed(2) + 'px ' + musicHeight.toFixed(2) + 'px'
-  musicON.style.top = musicTop.toFixed(2) + 'px'
-  musicON.style.left = musicLeft.toFixed(2) + 'px'
+  musicON.style.height = musicHeight + 'px'
+  musicON.style.width = musicWidth + 'px'
+  musicON.style.backgroundSize = musicWidth + 'px ' + musicHeight + 'px'
+  musicON.style.top = musicTop + 'px'
+  musicON.style.left = musicLeft + 'px'
 
-  continueButton.style.height = continueHeight.toFixed(2) + 'px'
-  continueButton.style.width = continueWidth.toFixed(2) + 'px'
-  continueButton.style.backgroundSize = continueWidth.toFixed(2) + 'px ' + continueHeight.toFixed(2) + 'px'
-  continueButton.style.top = continueTop.toFixed(2) + 'px'
-  continueButton.style.left = continueLeft.toFixed(2) + 'px'
+  continueButton.style.height = continueHeight + 'px'
+  continueButton.style.width = continueWidth + 'px'
+  continueButton.style.backgroundSize = continueWidth + 'px ' + continueHeight + 'px'
+  continueButton.style.top = continueTop + 'px'
+  continueButton.style.left = continueLeft + 'px'
 
-  gameOverPanelContainer.style.height = goHeight.toFixed(2) + 'px'
-  gameOverPanelContainer.style.width = goWidth.toFixed(2) + 'px'
-  gameOverPanelContainer.style.top = goTop.toFixed(2) + 'px'
-  gameOverPanelContainer.style.left = goLeft.toFixed(2) + 'px'
+  gameOverPanelContainer.style.height = goHeight + 'px'
+  gameOverPanelContainer.style.width = goWidth + 'px'
+  gameOverPanelContainer.style.top = goTop + 'px'
+  gameOverPanelContainer.style.left = goLeft + 'px'
 
-  gameOverPanel.style.height = goHeight.toFixed(2) + 'px'
-  gameOverPanel.style.width = goWidth.toFixed(2) + 'px'
-  gameOverPanel.style.backgroundSize = goWidth.toFixed(2) + 'px ' + goHeight.toFixed(2) + 'px'
+  gameOverPanel.style.height = goHeight + 'px'
+  gameOverPanel.style.width = goWidth + 'px'
+  gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
 
   keyFrames3 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
-    { height: goHeight.toFixed(2) + 'px', width: goWidth.toFixed(2) + 'px', backgroundSize: `${goWidth.toFixed(2)}px ${goHeight.toFixed(2)}px` }
+    { height: goHeight + 'px', width: goWidth + 'px', backgroundSize: `${goWidth}px ${goHeight}px` }
   ]
 
-  again.style.height = continueHeight.toFixed(2) + 'px'
-  again.style.width = againWidth.toFixed(2) + 'px'
-  again.style.top = againTop.toFixed(2) + 'px'
-  again.style.left = againLeft.toFixed(2) + 'px'
-  again.style.backgroundSize = againWidth.toFixed(2) + 'px ' + continueHeight.toFixed(2) + 'px'
+  again.style.height = continueHeight + 'px'
+  again.style.width = againWidth + 'px'
+  again.style.top = againTop + 'px'
+  again.style.left = againLeft + 'px'
+  again.style.backgroundSize = againWidth + 'px ' + continueHeight + 'px'
 
-  maxScoreText.style.top = maxScore1.toFixed(2) + 'px'
-  maxScoreText.style.left = maxScore2.toFixed(2) + 'px'
-  maxScoreText.style.fontSize = font.toFixed(2) + 'px'
-  maxScoreText.style.letterSpacing = letter.toFixed(2) + 'px'
+  maxScoreText.style.top = maxScore1 + 'px'
+  maxScoreText.style.left = maxScore2 + 'px'
+  maxScoreText.style.fontSize = font + 'px'
+  maxScoreText.style.letterSpacing = letter + 'px'
 
-  currentScoreText.style.top = currentScore1.toFixed(2) + 'px'
-  currentScoreText.style.left = currentScore2.toFixed(2) + 'px'
-  currentScoreText.style.fontSize = font.toFixed(2) + 'px'
-  currentScoreText.style.letterSpacing = letter.toFixed(2) + 'px'
+  currentScoreText.style.top = currentScore1 + 'px'
+  currentScoreText.style.left = currentScore2 + 'px'
+  currentScoreText.style.fontSize = font + 'px'
+  currentScoreText.style.letterSpacing = letter + 'px'
 
-  key.style.height = dirControlWidth.toFixed(2) + 'px'
-  key.style.width = dirControlWidth.toFixed(2) + 'px'
-  key.style.backgroundSize = dirControlWidth.toFixed(2) + 'px ' + dirControlWidth.toFixed(2) + 'px'
-  key.style.top = keyboardTop.toFixed(2) + 'px'
-  key.style.left = keyboardLeft.toFixed(2) + 'px'
+  key.style.height = dirControlWidth + 'px'
+  key.style.width = dirControlWidth + 'px'
+  key.style.backgroundSize = dirControlWidth + 'px ' + dirControlWidth + 'px'
+  key.style.top = keyboardTop + 'px'
+  key.style.left = keyboardLeft + 'px'
 
 }
 
@@ -404,10 +402,6 @@ function whetherEatFood() { //判断是否吃到食物
   food.forEach((obj, idx) => {
     if (snake[0].x === obj.x && snake[0].y === obj.y) {
       eatFood = true
-      if (musicIsOn) {
-        eatFoodSound.currentTime = 0
-        eatFoodSound.play()
-      }
       animateFun(5)
       snakeScore += 5
       tail += 1
@@ -417,10 +411,6 @@ function whetherEatFood() { //判断是否吃到食物
   movingFood31.forEach((obj, idx) => {
     if (snake[0].x === obj.x && snake[0].y === obj.y || snake[1].x === obj.x && snake[1].y === obj.y) {
       eatFood = true
-      if (musicIsOn) {
-        eatFoodSound.currentTime = 0
-        eatFoodSound.play()
-      }
       animateFun(500)
       snakeScore += 500
       tail += 6
@@ -430,10 +420,6 @@ function whetherEatFood() { //判断是否吃到食物
   movingFood32.forEach((obj, idx) => {
     if (snake[0].x === obj.x && snake[0].y === obj.y || snake[1].x === obj.x && snake[1].y === obj.y) {
       eatFood = true
-      if (musicIsOn) {
-        eatFoodSound.currentTime = 0
-        eatFoodSound.play()
-      }
       animateFun(500)
       snakeScore += 500
       tail += 6
@@ -443,10 +429,6 @@ function whetherEatFood() { //判断是否吃到食物
   movingFood2.forEach((obj, idx) => {
     if (snake[0].x === obj.x && snake[0].y === obj.y || snake[1].x === obj.x && snake[1].y === obj.y) {
       eatFood = true
-      if (musicIsOn) {
-        eatFoodSound.currentTime = 0
-        eatFoodSound.play()
-      }
       animateFun(50)
       snakeScore += 50
       tail += 3
@@ -491,7 +473,6 @@ function whetherEnterHole() { //判断是否进入洞口
 }
 
 function settleScore() { //结算分数
-  if (musicIsOn) settleSound.play()
   settle = true
   settling = true
   holeExist = false
@@ -582,11 +563,12 @@ function drawGame() { //打印贴图
   snake.forEach((obj, idx) => {
     if (idx !== 0 && idx !== snake.length - 1) {
       const img = document.createElement("img")
-      img.style.top = obj.y * cellSize / 659 * windowHeight + 'px'
-      img.style.left = obj.x * cellSize / 659 * windowHeight + 'px'
       img.style.position = 'absolute'
       img.style.width = cellSize / 659 * windowHeight + 'px'
       img.style.height = cellSize / 659 * windowHeight + 'px'
+      img.style.top = obj.y * cellSize / 659 * windowHeight + 'px'
+      img.style.left = obj.x * cellSize / 659 * windowHeight + 'px'
+
       if (obj.dirX === 0 && obj.dirY === 1) {
         img.src = './assets/straightV.png'
       }
@@ -1046,6 +1028,7 @@ function GameOver() { //游戏结束
 
 window.addEventListener('keydown', function (e) {  //键盘按下
   e.preventDefault();
+
   //空格键暂停
   if (e.key === ' ') {
     pauseButtonControl()
@@ -1097,16 +1080,14 @@ window.addEventListener('keyup', function (e) {  //键盘松开
 
 function musicControl() {  //音量键控制
   if (pausePanel.style.visibility === 'visible') {
-    buttonSound.currentTime = 0
-    buttonSound.play()
     if (musicIsOn) {
       musicIsOn = false
-      // BGM.pause()
+      BGM.pause()
       pausePanel.style.backgroundImage = 'url(./assets/pause_musicOFF.png)'
     }
     else {
       musicIsOn = true
-      // BGM.play()
+      BGM.play()
       pausePanel.style.backgroundImage = 'url(./assets/pause_musicON.png)'
     }
   }
@@ -1124,7 +1105,6 @@ musicON.addEventListener('touchstart', function (e) {  //音量键(触屏)
 
 function continueButtonControl() {  //'继续'按钮控制
   if (pausePanel.style.visibility === 'visible') {
-    if (musicIsOn) buttonSound.play()
     pause = false
     pauseButton.style.backgroundImage = 'url(./assets/pause_default.png)'
     pausePanel.style.visibility = 'hidden'
@@ -1144,7 +1124,6 @@ continueButton.addEventListener('touchstart', function (e) {  //继续(触屏)
 
 function againControl() {  //'再玩一次'按钮控制
   if (gameOver && gameOverPanelContainer.style.visibility === 'visible') {
-    if (musicIsOn) buttonSound.play()
     gameOver = false
     gameOverPanelContainer.style.visibility = 'hidden'
     init()
@@ -1294,7 +1273,7 @@ function gameOnControl() {  //初始状态：按方向键开始游戏 //settle�
     gameOn = true
     if (firstLoad) {
       firstLoad = false
-      // BGM.play()
+      BGM.play()
     }
     startLoop()
   }
