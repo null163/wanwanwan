@@ -105,14 +105,14 @@ body {
 .pausePanelContainer {
     position: relative;
     z-index: 5;
-    visibility: hidden;
+    /* visibility: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .pausePanel {
-    background-image: url(../assets/pause_musicON.png);
+    background-image: url(../assets/pause_musicOFF.png);
 }
 
 .musicON {

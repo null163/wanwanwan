@@ -120,19 +120,19 @@ function resize() {
   tipTop = 350 / 659 * windowHeight
   tipLeft = (windowWidth + gameWidth) / 2 + 105 / 659 * windowHeight
 
-  pausePanelHeight = 150 / 659 * windowHeight
+  pausePanelHeight = 155 / 659 * windowHeight
   pausePanelWidth = 220 / 659 * windowHeight
-  pausePanelTop = 190 / 659 * windowHeight
+  pausePanelTop = 185 / 659 * windowHeight
   pausePanelLeft = (windowWidth - pausePanelWidth) / 2
 
-  musicWidth = 88 / 659 * windowHeight
-  musicHeight = 37 / 659 * windowHeight
-  musicTop = 91 / 659 * windowHeight
+  musicWidth = 85 / 659 * windowHeight
+  musicHeight = 33 / 659 * windowHeight
+  musicTop = 88 / 659 * windowHeight
   musicLeft = 30 / 659 * windowHeight
 
-  continueHeight = 36 / 659 * windowHeight
-  continueWidth = 68 / 659 * windowHeight
-  continueTop = 90 / 659 * windowHeight
+  continueHeight = 34 / 659 * windowHeight
+  continueWidth = 65 / 659 * windowHeight
+  continueTop = 88 / 659 * windowHeight
   continueLeft = 130 / 659 * windowHeight
 
   goHeight = 200 / 659 * windowHeight
@@ -140,9 +140,9 @@ function resize() {
   goTop = 18 / 659 * windowHeight
   goLeft = (windowWidth - goWidth) / 2
 
-  againWidth = 105 / 659 * windowHeight
-  againTop = 145 / 659 * windowHeight
-  againLeft = 63 / 659 * windowHeight
+  againWidth = 100 / 659 * windowHeight
+  againTop = 147 / 659 * windowHeight
+  againLeft = 73 / 659 * windowHeight
 
   maxScore1 = 86 / 659 * windowHeight
   maxScore2 = 122 / 659 * windowHeight
@@ -321,7 +321,7 @@ function init() { //初始化
   eatFood = false
   holeExist = false
   firstHole = true
-  musicIsOn = true
+  musicIsOn = false
   gameOn = false
   gameOver = false
   pause = false
@@ -533,6 +533,58 @@ function drawGame() { //打印贴图
     gameContainer.appendChild(img)
   }
 
+  //打印食物
+  if (gameOn) {
+    food.forEach(obj => {
+      const div = document.createElement("div")
+      const img = document.createElement("img")
+      div.style.top = obj.y * cellSize / 659 * windowHeight + 'px'
+      div.style.left = (obj.x * cellSize - 1) / 659 * windowHeight + 'px'
+      div.style.position = 'absolute'
+      img.src = './assets/food' + obj.id + '.png'
+      img.style.width = (cellSize + 3) / 659 * windowHeight + 'px'
+      img.style.height = (cellSize + 2) / 659 * windowHeight + 'px'
+      div.appendChild(img)
+      gameContainer.appendChild(div)
+    })
+    movingFood31.forEach(obj => {
+      const div = document.createElement("div")
+      const img = document.createElement("img")
+      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
+      div.style.left = (obj.x * cellSize - 4) / 659 * windowHeight + 'px'
+      div.style.position = 'absolute'
+      img.src = './assets/food' + obj.id + '.png'
+      img.style.width = (cellSize + 8) / 659 * windowHeight + 'px'
+      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
+      div.appendChild(img)
+      gameContainer.appendChild(div)
+    })
+    movingFood32.forEach(obj => {
+      const div = document.createElement("div")
+      const img = document.createElement("img")
+      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
+      div.style.left = (obj.x * cellSize - 4) / 659 * windowHeight + 'px'
+      div.style.position = 'absolute'
+      img.src = './assets/food' + obj.id + '.png'
+      img.style.width = (cellSize + 8) / 659 * windowHeight + 'px'
+      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
+      div.appendChild(img)
+      gameContainer.appendChild(div)
+    })
+    movingFood2.forEach(obj => {
+      const div = document.createElement("div")
+      const img = document.createElement("img")
+      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
+      div.style.left = (obj.x * cellSize - 2.5) / 659 * windowHeight + 'px'
+      div.style.position = 'absolute'
+      img.src = './assets/food' + obj.id + '.png'
+      img.style.width = (cellSize + 6) / 659 * windowHeight + 'px'
+      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
+      div.appendChild(img)
+      gameContainer.appendChild(div)
+    })
+  }
+
   //打印尾部
   if (snake.length > 1) {
     const tail = document.createElement("img")
@@ -672,57 +724,7 @@ function drawGame() { //打印贴图
   div.appendChild(head)
   gameContainer.appendChild(div)
 
-  //打印食物
-  if (gameOn) {
-    food.forEach(obj => {
-      const div = document.createElement("div")
-      const img = document.createElement("img")
-      div.style.top = obj.y * cellSize / 659 * windowHeight + 'px'
-      div.style.left = (obj.x * cellSize - 1) / 659 * windowHeight + 'px'
-      div.style.position = 'absolute'
-      img.src = './assets/food' + obj.id + '.png'
-      img.style.width = (cellSize + 3) / 659 * windowHeight + 'px'
-      img.style.height = (cellSize + 2) / 659 * windowHeight + 'px'
-      div.appendChild(img)
-      gameContainer.appendChild(div)
-    })
-    movingFood31.forEach(obj => {
-      const div = document.createElement("div")
-      const img = document.createElement("img")
-      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
-      div.style.left = (obj.x * cellSize - 4) / 659 * windowHeight + 'px'
-      div.style.position = 'absolute'
-      img.src = './assets/food' + obj.id + '.png'
-      img.style.width = (cellSize + 8) / 659 * windowHeight + 'px'
-      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
-      div.appendChild(img)
-      gameContainer.appendChild(div)
-    })
-    movingFood32.forEach(obj => {
-      const div = document.createElement("div")
-      const img = document.createElement("img")
-      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
-      div.style.left = (obj.x * cellSize - 4) / 659 * windowHeight + 'px'
-      div.style.position = 'absolute'
-      img.src = './assets/food' + obj.id + '.png'
-      img.style.width = (cellSize + 8) / 659 * windowHeight + 'px'
-      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
-      div.appendChild(img)
-      gameContainer.appendChild(div)
-    })
-    movingFood2.forEach(obj => {
-      const div = document.createElement("div")
-      const img = document.createElement("img")
-      div.style.top = (obj.y * cellSize - 3) / 659 * windowHeight + 'px'
-      div.style.left = (obj.x * cellSize - 2.5) / 659 * windowHeight + 'px'
-      div.style.position = 'absolute'
-      img.src = './assets/food' + obj.id + '.png'
-      img.style.width = (cellSize + 6) / 659 * windowHeight + 'px'
-      img.style.height = (cellSize + 6) / 659 * windowHeight + 'px'
-      div.appendChild(img)
-      gameContainer.appendChild(div)
-    })
-  }
+
 
   //打印地图边缘线
   const img = document.createElement("img")
@@ -1273,7 +1275,9 @@ function gameOnControl() {  //初始状态：按方向键开始游戏 //settle�
     gameOn = true
     if (firstLoad) {
       firstLoad = false
+      musicIsOn = true
       BGM.play()
+      pausePanel.style.backgroundImage = 'url(./assets/pause_musicON.png)'
     }
     startLoop()
   }
