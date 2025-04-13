@@ -160,8 +160,8 @@ function resize() {
   whole.style.width = headWidth + 'px'
 
   scoreAnimate.style.width = headWidth + 'px'
-  scoreAnimate.style.height = (headHeight + gameWidth) + 'px'
-  scoreAnimate.style.left = ((windowWidth - headWidth) / 2) + 'px'
+  scoreAnimate.style.height = headHeight + gameWidth + 'px'
+  scoreAnimate.style.left = (windowWidth - headWidth) / 2 + 'px'
 
   keyFrames = [
     { fontSize: 0 + 'px' },
@@ -188,7 +188,7 @@ function resize() {
 
   keyboard.style.height = keyboardHeight + 'px'
   keyboard.style.width = gameWidth + 'px'
-  keyboard.style.top = (gameWidth + Top) + 'px'
+  keyboard.style.top = gameWidth + Top + 'px'
   keyboard.style.left = Left + 'px'
   keyboard.style.backgroundSize = gameWidth + 'px ' + keyboardHeight + 'px'
 
@@ -723,8 +723,6 @@ function drawGame() { //打印贴图
   }
   div.appendChild(head)
   gameContainer.appendChild(div)
-
-
 
   //打印地图边缘线
   const img = document.createElement("img")
