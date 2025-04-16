@@ -91,13 +91,13 @@ function resize() {
   Left = (headWidth - gameWidth) / 2
 
   maskLeft.style.width = (15 / 659 * windowHeight) + 'px'
-  maskLeft.style.height = gameWidth + 'px'
-  maskLeft.style.top = Top + 'px'
+  maskLeft.style.height = (gameWidth + 20 / 659 * windowHeight) + 'px'
+  maskLeft.style.top = (Top - 10 / 659 * windowHeight) + 'px'
   maskLeft.style.left = (-3 / 659 * windowHeight) + 'px'
 
   maskRight.style.width = (15 / 659 * windowHeight) + 'px'
-  maskRight.style.height = gameWidth + 'px'
-  maskRight.style.top = Top + 'px'
+  maskRight.style.height = (gameWidth + 20 / 659 * windowHeight) + 'px'
+  maskRight.style.top = (Top - 10 / 659 * windowHeight) + 'px'
   maskRight.style.left = (gameWidth + 12 / 659 * windowHeight) + 'px'
 
   score1 = 117 / 659 * windowHeight  //top
@@ -481,6 +481,7 @@ function settleScore() { //结算分数
   scoreRefreshLoop()
   totalScore += snakeScore
   snakeScore = 0
+  tail = 0
   drawGame()
   settleLoop()
 }
