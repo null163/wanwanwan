@@ -3,6 +3,11 @@
     src: url(../fonts/douyuFont0-9.woff2);
 }
 
+@font-face {
+    font-family: myFont2;
+    src: url(../fonts/huxiaoboLOADING.woff2);
+}
+
 body {
     position: relative;
     margin: 0;
@@ -46,20 +51,17 @@ body {
 .bgHead {
     position: absolute;
     z-index: 3;
-    background-image: url(../assets/bg4.png);
 }
 
 .background {
     position: absolute;
     z-index: 1;
-    background-image: url(../assets/bg.png);
 }
 
 .bgKeyboard {
     display: flex;
     position: absolute;
     z-index: 2;
-    background-image: url(../assets/bg3.png);
 }
 
 .mask {
@@ -68,19 +70,15 @@ body {
     background-color: #cceafd;
 }
 
-.pause {
+.pause,
+.speedUp,
+.dirControl,
+.scoreContainer,
+.tip,
+.musicON,
+.continue,
+.again {
     position: absolute;
-    background-image: url(../assets/pause_default.png);
-}
-
-.speedUp {
-    position: absolute;
-    background-image: url(../assets/speed_default.png);
-}
-
-.dirControl {
-    position: absolute;
-    background-image: url(../assets/keyboard_default.png);
 }
 
 .key {
@@ -88,18 +86,9 @@ body {
     z-index: 3;
 }
 
-.scoreContainer {
-    position: absolute;
-}
-
 .score {
     font-family: myFont;
     color: #9cd4ff;
-}
-
-.tip {
-    position: absolute;
-    background-image: url(../assets/tip.png);
 }
 
 .pausePanelContainer {
@@ -111,18 +100,6 @@ body {
     align-items: center;
 }
 
-.pausePanel {
-    background-image: url(../assets/pause_musicOFF.png);
-}
-
-.musicON {
-    position: absolute;
-}
-
-.continue {
-    position: absolute;
-}
-
 .gameOverPanelContainer {
     position: relative;
     z-index: 5;
@@ -130,14 +107,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.gameOverPanel {
-    background-image: url(../assets/gameOverPanel1.png);
-}
-
-.again {
-    position: absolute;
 }
 
 .maxScore {
@@ -152,4 +121,23 @@ body {
     position: absolute;
     font-family: myFont;
     color: #9cd5ff;
+}
+
+.loadingContainer {
+    background-color: #cceafd;
+    position: absolute;
+    z-index: 6;
+}
+
+.loadingImg {
+    background-image: url(../assets/loading.png);
+    position: absolute;
+    z-index: 7;
+}
+
+.loadingText {
+    position: absolute;
+    z-index: 7;
+    font-family: myFont2;
+    color: #4c7fed;
 }
